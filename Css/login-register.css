@@ -1,0 +1,226 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* Navbar tùy chỉnh giống cũ */
+.custom-navbar {
+  background-color: #1e1e2f;
+  padding: 10px 20px;
+  color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+/* Dropdown hover hiện menu */
+.custom-dropdown:hover .genre-menu {
+  display: block;
+  animation: fadeInDown 0.3s ease-in-out;
+}
+
+/* Ẩn dropdown mặc định (chỉ hiện khi hover) */
+.genre-menu {
+  display: none;
+  margin-top: 0;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Hiệu ứng trượt xuống */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Style dropdown item */
+.genre-menu .dropdown-item {
+  padding: 10px 20px;
+  transition: background-color 0.2s ease;
+}
+
+.genre-menu .dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Dropdown người dùng có hiệu ứng mượt */
+.user-menu {
+  min-width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  animation: fadeSlideDown 0.25s ease;
+  transform-origin: top;
+}
+
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.custom-navbar .navbar-brand {
+  color: #ffffff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.custom-navbar .navbar-brand img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.custom-navbar .nav-link {
+  color: #ffffff !important;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.custom-navbar .nav-link:hover {
+  text-decoration: underline;
+}
+/* Nút hamburger màu trắng */
+.navbar-toggler {
+  border: none;
+}
+.btn-search-nav {
+  background-color: #ff5722;
+  color: #000;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: 0.5s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin-top: 5px;
+}
+
+.btn-search-nav:hover {
+  background-color: #03e0e0;
+  color: #000;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  line-height: 1.5;
+}
+.login-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  background-color: #1e1e2f;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.login-container h1 {
+  margin-bottom: 20px;
+  color: #9b59b6;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-form input {
+  padding: 10px;
+  border: 1px solid #888888;
+  border-radius: 6px;
+  background-color: #121212;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.login-form button {
+  padding: 10px;
+  background-color: #9b59b6;
+  color: #121212;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-form button:hover {
+  background-color: #888888;
+  color: #121212;
+}
+.register-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  background-color: #1e1e2f;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.register-container h1 {
+  margin-bottom: 20px;
+  color: #9b59b6;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.register-form input {
+  padding: 10px;
+  border: 1px solid #888888;
+  border-radius: 6px;
+  background-color: #121212;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.register-form button {
+  padding: 10px;
+  background-color: #9b59b6;
+  color: #121212;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.register-form button:hover {
+  background-color: #888888;
+  color: #121212;
+}

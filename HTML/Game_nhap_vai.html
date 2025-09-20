@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game nhập vai</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../Css/new_game.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg custom-navbar">
+      <div class="container-fluid">
+        <!-- Logo -->
+        <a
+          class="navbar-brand d-flex align-items-center"
+          href="../HTML/index.html"
+        >
+          <img src="../Img/Game_logo.webp" alt="Logo" />
+          <span>Game downloader</span>
+        </a>
+
+        <!-- Nút hamburger -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu -->
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="mainNavbar"
+        >
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="btn btn-search-nav ms-2" href="./search.html"
+                >🔍 Tìm kiếm game</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="./new_game.html">Game mới</a>
+            </li>
+            <li class="nav-item dropdown custom-dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="genreDropdown"
+                role="button"
+              >
+                Thể loại
+              </a>
+              <ul
+                class="dropdown-menu genre-menu"
+                aria-labelledby="genreDropdown"
+              >
+                <li><a class="dropdown-item" href="./Game_hanh_dong.html">Hành động</a></li>
+                <li><a class="dropdown-item" href="./Game_phieu_luu.html">Phiêu lưu</a></li>
+                <li><a class="dropdown-item" href="./Game_nhap_vai.html">Nhập vai</a></li>
+                <li><a class="dropdown-item" href="./Game_kinh_di.html">Kinh dị</a></li>
+                <li><a class="dropdown-item" href="./Game_the_thao.html">Thể thao</a></li>
+                <li><a class="dropdown-item" href="./Game_mo_phong.html">Mô phỏng</a></li>
+              </ul>
+            </li>
+
+            <!-- Khi chưa đăng nhập -->
+            <li class="nav-item">
+              <a class="nav-link" href="./login.html" id="loginBtn"
+                >Đăng nhập</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./register.html" id="registerBtn"
+                >Đăng ký</a
+              >
+            </li>
+
+            <!-- Khi đã đăng nhập -->
+            <li
+              class="nav-item dropdown user-dropdown"
+              id="userDropdown"
+              style="display: none"
+            >
+              <a
+                class="nav-link dropdown-toggle d-flex align-items-center"
+                href="#"
+                id="userDropdownBtn"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  id="userAvatar"
+                  src="../Img/user.jpg"
+                  alt="User"
+                  class="user-avatar"
+                />
+                <span id="userNameLabel" style="margin-left: 8px"></span>
+              </a>
+              <ul
+                class="dropdown-menu user-menu dropdown-menu-end"
+                aria-labelledby="userDropdownBtn"
+              >
+                <li>
+                  <span class="dropdown-item-text" id="userEmail"
+                    >dochibinh1981@gmail.com</span
+                  >
+                </li>
+                <li>
+                  <span class="dropdown-item-text">
+                    Số dư:
+                    <span id="dropdownBalance" style="color: red">0 đ</span>
+                  </span>
+                </li>
+
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="./profile.html">Tài khoản</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./deposit_money.html"
+                    >Nạp tiền</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./leaderboard.html"
+                    >Top nạp tiền</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./purchased.html"
+                    >Game đã mua</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#" id="logoutBtnDropdown"
+                    >Đăng xuất</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <h1 class="title">Game nhập vai</h1>
+    <div class="game-list">
+      <a href="./Game3.html" class="game-card">
+        <img src="../Img/Elden_ring_nightreign.webp" alt="Elden ring" />
+        <h2>Elden ring nightreign</h2>
+      </a>
+      <a href="./Game13.html" class="game-card">
+        <img src="../Img/Cyberpunk_2077.jpg" alt="Cyberpunk" />
+        <h2>Cyberpunk 2077</h2>
+      </a>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loginBtn = document.getElementById("loginBtn");
+        const registerBtn = document.getElementById("registerBtn");
+        const logoutBtn = document.getElementById("logoutBtn");
+        const welcomeUser = document.getElementById("welcomeUser");
+
+        const isLoggedIn = localStorage.getItem("loggedIn");
+        const currentUser = localStorage.getItem("currentUser");
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const balance = localStorage.getItem("userBalance");
+        const balanceEl = document.getElementById("dropdownBalance");
+        if (balanceEl && balance !== null) {
+          balanceEl.textContent = Number(balance).toLocaleString() + " đ";
+        }
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loginBtn = document.getElementById("loginBtn");
+        const registerBtn = document.getElementById("registerBtn");
+        const userDropdown = document.getElementById("userDropdown");
+        const userNameLabel = document.getElementById("userNameLabel");
+        const userEmailDisplay = document.getElementById("userEmail");
+        const logoutBtnDropdown = document.getElementById("logoutBtnDropdown");
+
+        const isLoggedIn = localStorage.getItem("loggedIn");
+        const currentUser = localStorage.getItem("currentUser");
+        const currentEmail = localStorage.getItem("currentEmail");
+
+        if (isLoggedIn === "true" && currentUser) {
+          if (loginBtn) loginBtn.style.display = "none";
+          if (registerBtn) registerBtn.style.display = "none";
+          if (userDropdown) userDropdown.style.display = "block";
+
+          userNameLabel.textContent = currentUser;
+          userEmailDisplay.textContent =
+            currentEmail || "dochibinh1981@gmail.com";
+
+          if (logoutBtnDropdown) {
+            logoutBtnDropdown.addEventListener("click", function () {
+              localStorage.removeItem("loggedIn");
+              localStorage.removeItem("currentUser");
+              localStorage.removeItem("currentEmail");
+              location.reload();
+            });
+          }
+        }
+      });
+    </script>
+    <script>
+      window.addEventListener("load", function () {
+        const savedAvatar = localStorage.getItem("userAvatar");
+        const avatarImg = document.getElementById("userAvatar");
+
+        if (savedAvatar && avatarImg) {
+          avatarImg.src = savedAvatar;
+        }
+      });
+    </script>
+  </body>
+  <footer class="fancy-footer">
+    <div class="footer-container">
+      <div class="footer-section brand">
+        <img src="../Img/Game_logo.webp" alt="Logo" />
+        <h2>Game Downloader</h2>
+        <p>Tải game tốc độ cao – Cập nhật game hot mỗi ngày!</p>
+      </div>
+
+      <div class="footer-section links">
+        <h3>Danh mục</h3>
+        <ul>
+          <li><a href="./index.html">Trang chủ</a></li>
+          <li><a href="./new_game.html">Game mới</a></li>
+          <li><a href="./tintuc_1.html">Tin tức</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section support">
+        <h3>Hỗ trợ</h3>
+        <ul>
+          <li><a href="#">Chính sách bảo mật</a></li>
+          <li><a href="#">Điều khoản sử dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section social">
+        <h3>Kết nối</h3>
+        <div class="social-icons">
+          <a href="#"><img src="../Img/Facebook.webp" alt="Facebook" /></a>
+          <a href="#"><img src="../Img/YouTube.png" alt="YouTube" /></a>
+          <a href="#"><img src="../Img/tiktok.jpg" alt="TikTok" /></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Game Downloader. All rights reserved.</p>
+    </div>
+  </footer>
+</html>

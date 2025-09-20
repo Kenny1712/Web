@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BeamNG drive</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../Css/Game.css" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container-fluid">
+      <!-- Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="../HTML/index.html">
+        <img src="../Img/Game_logo.webp" alt="Logo" />
+        <span>Game downloader</span>
+      </a>
+
+      <!-- Nút hamburger -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menu -->
+      <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="btn btn-search-nav ms-2" href="./search.html">🔍 Tìm kiếm game</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./new_game.html">Game mới</a>
+          </li>
+          <li class="nav-item dropdown custom-dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="genreDropdown" role="button">
+              Thể loại
+            </a>
+            <ul class="dropdown-menu genre-menu" aria-labelledby="genreDropdown">
+              <li>
+                <a class="dropdown-item" href="./Game_hanh_dong.html">Hành động</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="./Game_phieu_luu.html">Phiêu lưu</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="./Game_nhap_vai.html">Nhập vai</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="./Game_kinh_di.html">Kinh dị</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="./Game_the_thao.html">Thể thao</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="./Game_mo_phong.html">Mô phỏng</a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Khi chưa đăng nhập -->
+          <li class="nav-item">
+            <a class="nav-link" href="./login.html" id="loginBtn">Đăng nhập</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./register.html" id="registerBtn">Đăng ký</a>
+          </li>
+
+          <!-- Khi đã đăng nhập -->
+          <li class="nav-item dropdown user-dropdown" id="userDropdown" style="display: none">
+            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdownBtn" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <img id="userAvatar" src="../Img/user.jpg" alt="User" class="user-avatar" />
+              <span id="userNameLabel" style="margin-left: 8px"></span>
+            </a>
+            <ul class="dropdown-menu user-menu dropdown-menu-end" aria-labelledby="userDropdownBtn">
+              <li>
+                <span class="dropdown-item-text" id="userEmail">dochibinh1981@gmail.com</span>
+              </li>
+              <li>
+                <span class="dropdown-item-text">
+                  Số dư:
+                  <span id="dropdownBalance" style="color: red">0 đ</span>
+                </span>
+              </li>
+
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a class="dropdown-item" href="./profile.html">Tài khoản</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="./deposit_money.html">Nạp tiền</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="./leaderboard.html">Top nạp tiền</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="./purchased.html">Game đã mua</a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a class="dropdown-item" href="#" id="logoutBtnDropdown">Đăng xuất</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="main-section">
+    <div class="game-hero">
+      <img src="../Img/beamng_drive.jpeg" alt="beamng drive Banner" />
+      <div class="hero-info">
+        <h1>BEAMNG DRIVE</h1>
+        <p>
+          BeamNG drive là một trò chơi mô phỏng lái xe với cơ chế vật lý siêu
+          thực và chi tiết đến từng cú va chạm. Người chơi có thể thử nghiệm
+          hàng loạt phương tiện khác nhau, từ xe hơi, xe tải đến xe đua, trong
+          môi trường thế giới mở đa dạng. Với hệ thống mô phỏng va chạm mềm
+          (soft-body physics), BeamNG drive mang đến trải nghiệm lái xe chân
+          thực, nơi mỗi vụ tai nạn đều phản ánh đúng lực tác động và thiệt hại
+          vật lý.
+        </p>
+        <div class="game-details">
+          <div class="info-item">
+            • Nhà phát hành: <strong>BeamNG</strong>
+          </div>
+          <div class="info-item">
+            • Ngày phát hành: <strong>30-05-2015</strong>
+          </div>
+          <div class="info-item">
+            • Thể loại:
+            <strong>Online + Co-op + Multiplayer, Mô phỏng</strong>
+          </div>
+          <div class="info-item">• Dung lượng: <strong>52.9 GB</strong></div>
+          <div class="info-item">• Cấu hình: <strong>Trung bình</strong></div>
+          <div class="info-item">• Cập nhật: <strong>10-04-2025</strong></div>
+          <div class="info-item">
+            • Ngôn ngữ:
+            <strong>
+              Tiếng Anh Tiếng Nhật Tiếng Trung Quốc Tiếng Hàn Quốc Tiếng
+              Pháp</strong>
+          </div>
+          <div class="info-item">• Series: <strong>BeamNG drive</strong></div>
+          <div class="info-item">• Phát triển:<strong> Indie</strong></div>
+          <div class="info-item">
+            • Người đăng:<strong> Game downloader</strong>
+          </div>
+        </div>
+        <a href="#tai-game" class="btn-download">Tải Ngay</a>
+      </div>
+    </div>
+  </section>
+  <div class="row-layout">
+    <div class="left-column">
+      <section class="content-section" id="gioi-thieu">
+        <h2>Giới thiệu</h2>
+        <p>
+          BeamNG.drive là một trò chơi lái xe cực kỳ thực tế với khả năng gần
+          như vô hạn. Động cơ vật lý thân mềm của chúng tôi mô phỏng mọi bộ
+          phận của xe trong thời gian thực, mang lại hoạt động giống như thật.
+          Với nhiều năm thiết kế tỉ mỉ, nghiên cứu và trải nghiệm chuyên sâu,
+          mô phỏng tái tạo chân thực cảm giác phấn khích khi lái xe trong thế
+          giới thực.
+        </p>
+        <p>Tại sao BeamNG.drive là trò chơi dành cho bạn?</p>
+        <p>
+          Vật lý thân mềm: Công cụ vật lý BeamNG là cốt lõi của mô phỏng
+          phương tiện chi tiết và chân thực nhất mà bạn từng thấy trong trò
+          chơi. Sự cố xảy ra có cảm giác rõ ràng vì trò chơi sử dụng mô hình
+          sát thương cực kỳ chính xác.
+        </p>
+        <p>
+          Phương tiện: BeamNG.drive cung cấp hàng tá phương tiện được cải
+          tiến, hoàn toàn có thể tùy chỉnh để bạn thử nghiệm. Cho dù đó là một
+          chiếc ô tô nhỏ gọn hay một chiếc xe tải lớn, bạn có thể tinh chỉnh
+          tất cả các bộ phận chuyển động để tạo ra bất kỳ trải nghiệm lái xe
+          nào bạn muốn. Bánh xe, hệ thống treo, động cơ, v.v.; mọi thứ đều nằm
+          trong tầm kiểm soát của bạn.
+        </p>
+        <p>
+          Môi trường: Có rất nhiều điều để khám phá khi bạn lái xe. Với 12 môi
+          trường thế giới mở rộng lớn, đẹp mắt, địa hình cũng rộng lớn và đa
+          dạng như các tùy chọn lối chơi. Kiểm tra thiết lập mới của bạn qua
+          các lối đi trong rừng rậm nhiệt đới, sa mạc cằn cỗi, đại lộ đô thị,
+          đường cao tốc nhanh và nhiều hơn thế nữa.
+        </p>
+        <p>Nhiều tính năng hơn</p>
+        <p>
+          Chế độ trò chơi: Chế độ này đi sâu hơn nhiều so với chế độ mô phỏng
+          lái xe tiêu chuẩn của bạn. Phạm vi tùy chọn lối chơi rất đặc biệt,
+          cho dù đó là thực hiện một nhiệm vụ giao hàng đơn giản hay tạo toàn
+          bộ bản đồ để thử nghiệm các chế tạo ô tô mới.
+        </p>
+        <p>
+          Đi lang thang miễn phí: Bạn không muốn cảm thấy bị giới hạn? Đi bất
+          kỳ phương tiện nào đến đích bạn chọn và bắt đầu khám phá. Thử nghiệm
+          cũng là điều quan trọng trong chế độ trò chơi này vì các vật thể và
+          điều kiện môi trường có thể được điều chỉnh. Hãy thử tăng tốc độ gió
+          để thử thách hoặc thay đổi trọng lực!
+        </p>
+        <p>
+          Kịch bản: BeamNG.drive cung cấp vô số kịch bản cho mọi loại người
+          đam mê lái xe. Bạn có thể hoàn thành yêu cầu giao hàng bằng xe tải
+          nhanh chóng và hiệu quả nhất có thể hoặc vượt qua các tàu tuần dương
+          của cảnh sát trong một cuộc truy đuổi gắt gao. Bất kể tình huống
+          nào, công cụ vật lý thực tế sẽ thu hút và khiến bạn đắm chìm trong
+          trải nghiệm.
+        </p>
+        <p>
+          Thử nghiệm thời gian: Chọn phương tiện, môi trường và tuyến đường và
+          thử thách bản thân! Tinh chỉnh kỹ năng của bạn và cạnh tranh với
+          chính mình trong khi cải thiện thời gian tốt nhất của bạn.
+        </p>
+        <p>
+          Nội dung cộng đồng và sửa đổi: Chúng tôi tự hào về cộng đồng sôi
+          động gồm những người đam mê đã khơi dậy cuộc trò chuyện thú vị, đồng
+          thời tạo ra các phương tiện, địa hình và kịch bản thú vị để người
+          khác thưởng thức. Khả năng sửa đổi trong BeamNG.drive rất lớn, cho
+          phép bạn tùy chỉnh và tinh chỉnh mọi thứ. Với World Editor có sẵn
+          của chúng tôi, mọi người đều có thể thay đổi trải nghiệm trong trò
+          chơi của mình.
+        </p>
+        <p>
+          Tự động hóa: Chúng tôi đã hợp tác với Tự động hóa - trò chơi của ông
+          trùm công ty ô tô - để cho phép người chơi xuất tác phẩm của họ vào
+          BeamNG.drive. Nếu bạn sở hữu Tự động hóa, đó là một quy trình khá
+          đơn giản: thiết kế ô tô và động cơ tùy chỉnh, điều chỉnh mọi thứ
+          theo thông số kỹ thuật của bạn, chọn tùy chọn "xuất", khởi động
+          BeamNG.drive và bạn sẽ có thể tìm thấy tác phẩm mới nhất của mình
+          trong danh sách xe!
+        </p>
+        <p>
+          Tự do: Điều khiến BeamNG.drive khác biệt so với các trò chơi ô tô
+          khác là quyền tự do của người chơi. Đó là việc thực hiện hầu hết mọi
+          thứ bạn có thể nghĩ ra với một chiếc ô tô hoặc xe tải và chứng kiến
+          nó diễn ra theo cách thực tế nhất có thể. Với công cụ vật lý thân
+          mềm và khả năng sửa đổi của chúng tôi, bạn có thể nghĩ ra bất kỳ
+          kịch bản nào có thể tưởng tượng được. Đó không chỉ là về phương tiện
+          mà còn là việc tận dụng thế giới mở rộng lớn và có thể tùy chỉnh để
+          tạo ra trải nghiệm lái xe mà bạn hình dung. Kết hợp vật lý hàng đầu
+          trong ngành, khả năng tùy chỉnh vô tận và cộng đồng gắn kết chặt chẽ
+          có nghĩa là BeamNG.drive là trình mô phỏng phương tiện thú vị và
+          toàn diện nhất mà bạn từng chơi.
+        </p>
+      </section>
+      <section>
+        <div class="carousel-container">
+          <button class="nav prev" onclick="prevSlide()">‹</button>
+
+          <div class="carousel-track">
+            <img src="../Img/BD_1.jpeg" class="carousel-img" />
+            <img src="../Img/BD_2.jpeg" class="carousel-img active" />
+            <img src="../Img/BD_3.jpeg" class="carousel-img" />
+            <img src="../Img/BD_4.jpeg" class="carousel-img" />
+          </div>
+
+          <button class="nav next" onclick="nextSlide()">›</button>
+
+          <div class="carousel-dots">
+            <span class="dot active" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
+            <span class="dot" onclick="goToSlide(3)"></span>
+          </div>
+        </div>
+      </section>
+      <section class="content-section" id="cau-hinh">
+        <h2>Cấu hình yêu cầu</h2>
+        <h3>Cấu hình tối thiểu:</h3>
+        <ul>
+          <li>Hệ điều hành: Windows 10 64-bit</li>
+          <li>CPU: Intel Core i5-2500K / AMD Ryzen 3 1200</li>
+          <li>RAM: 8 GB</li>
+          <li>Card đồ họa: NVIDIA GeForce GTX 960 / AMD Radeon R9 380</li>
+          <li>Dung lượng ổ cứng: 100 GB trống</li>
+        </ul>
+        <h3>Cấu hình đề nghị:</h3>
+        <ul>
+          <li>Hệ điều hành: Windows 10/11 64-bit</li>
+          <li>CPU: Intel Core i7-6700K / AMD Ryzen 5 1600X</li>
+          <li>RAM: 16 GB</li>
+          <li>
+            Card đồ họa: NVIDIA GeForce GTX 1070 / AMD Radeon RX Vega 56
+          </li>
+          <li>Dung lượng ổ cứng: SSD với ít nhất 100 GB trống</li>
+        </ul>
+      </section>
+      <section class="content-section" id="tai-game">
+        <h2>Tải Game</h2>
+        <div class="download-card">
+          <img src="../Img/beamng_drive_2.jpeg" alt="Game Art" />
+          <div class="download-info">
+            <p>Nền tảng: PC / PS5 / Xbox</p>
+            <button class="btn btn-primary" onclick="buyGame()">
+              🛒 Mua game (500,000 đ)
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section2" id="tin-tuc">
+        <h2>Tin tức mới</h2>
+        <div class="news-card">
+          <h3>Trailer mới ra mắt</h3>
+          <p>
+            Trailer mới nhất của BeamNG.drive đã được phát hành, mang đến
+            cái nhìn sâu sắc về các tính năng mới và cải tiến trong trò chơi.
+          </p>
+          <iframe width="100%" height="400" src="https://www.youtube.com/embed/j6yNuW0Sbno" title="Trailer BeamNG.drive"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </section>
+    </div>
+    <div class="right-column">
+        <h3 class="left">Game hot</h3>
+        <h3 class="right"><a href="../HTML/new_game.html">Xem thêm</a></h3>
+        <div class="related-game">
+          <a href="../HTML/Game3.html"
+            ><img src="../Img/Elden_ring_nightreign.webp" alt="Elden ring"
+          /></a>
+          <a href="../HTML/Game3.html">Elden ring nightreign</a>
+        </div>
+        <div class="related-game">
+          <a href="../HTML/Game6.html"
+            ><img src="../Img/Palworld.webp" alt="Đua xe"
+          /></a>
+          <a href="../HTML/Game6.html">Palworld</a>
+        </div>
+        <div class="related-game">
+          <a href="../HTML/Game5.html"
+            ><img src="../Img/PKM_shield_1.jpg" alt="Pokemon Shield"
+          /></a>
+          <a href="../HTML/Game5.html">Pokemon Shield</a>
+        </div>
+        <div class="related-game">
+          <a href="../HTML/Game4.html"
+            ><img src="../Img/PKM_sword_1.jpg" alt="Pokemon Sword"
+          /></a>
+          <a href="../HTML/Game4.html">Pokemon Sword</a>
+        </div>
+        <div class="related-game">
+          <a href="../HTML/Game1.html"
+            ><img src="../Img/Game_nhapvai.jpg" alt="Black Myth: Wukong"
+          /></a>
+          <a href="../HTML/Game1.html">Black Myth: Wukong</a>
+        </div>
+        <div class="related-game">
+          <a href="../HTML/Game2.html"
+            ><img src="../Img/beamng_drive_2.jpeg" alt="BeamNG Drive"
+          /></a>
+          <a href="../HTML/Game2.html">BeamNG Drive</a>
+        </div>
+        <div class="related-game">
+          <a href="../HTML/Game18.html"
+            ><img src="../Img/FC_25.jpg" alt="FC 25"
+          /></a>
+          <a href="../HTML/Game18.html">FC 25</a>
+        </div>
+        <div class="related-game">
+          <a href="../HTML/Game20.html"
+            ><img src="../Img/flight_sim.jpg" alt="Microsoft Flight Simulator"
+          /></a>
+          <a href="../HTML/Game20.html">Microsoft flight simulator</a>
+        </div>
+      </div>
+  </div>
+
+  <section class="feedback" id="danh-gia">
+    <h2>Đánh giá người chơi</h2>
+    <div class="feedback-list">
+      <div class="feedback-card">
+        <img src="../Img/user.jpg" alt="Người dùng" />
+        <div>
+          <strong>Hùng Trần</strong><br />
+          Đồ họa đỉnh thật sự, cảm giác như đang xem phim điện ảnh. Cơ chế
+          chiến đấu khó nhưng đã!
+        </div>
+      </div>
+    </div>
+
+    <!-- Form bình luận -->
+    <div class="comment-box">
+      <h2>Để lại bình luận</h2>
+      <form id="commentForm">
+        <input type="text" id="userName" placeholder="Tên của bạn" />
+        <textarea id="userComment" placeholder="Cảm nghĩ về game..."></textarea>
+        <button type="submit">Gửi</button>
+      </form>
+    </div>
+  </section>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const loginBtn = document.getElementById("loginBtn");
+      const registerBtn = document.getElementById("registerBtn");
+      const logoutBtn = document.getElementById("logoutBtn");
+      const welcomeUser = document.getElementById("welcomeUser");
+
+      const isLoggedIn = localStorage.getItem("loggedIn");
+      const currentUser = localStorage.getItem("currentUser");
+
+      if (isLoggedIn === "true" && currentUser) {
+        if (loginBtn) loginBtn.style.display = "none";
+        if (registerBtn) registerBtn.style.display = "none";
+        if (logoutBtn) logoutBtn.style.display = "inline-block";
+        if (welcomeUser) {
+          welcomeUser.style.display = "inline-block";
+          welcomeUser.textContent = "Xin chào, " + currentUser + "!";
+        }
+
+        if (logoutBtn) {
+          logoutBtn.addEventListener("click", function () {
+            localStorage.removeItem("loggedIn");
+            localStorage.removeItem("currentUser");
+            location.reload();
+          });
+        }
+      }
+    });
+  </script>
+  <script>
+    let current = 1;
+    const images = document.querySelectorAll(".carousel-img");
+    const dots = document.querySelectorAll(".dot");
+
+    function updateCarousel() {
+      images.forEach((img, i) => {
+        img.classList.toggle("active", i === current);
+      });
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === current);
+      });
+    }
+
+    function nextSlide() {
+      current = (current + 1) % images.length;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      current = (current - 1 + images.length) % images.length;
+      updateCarousel();
+    }
+
+    function goToSlide(index) {
+      current = index;
+      updateCarousel();
+    }
+
+    // Gọi lần đầu để hiển thị đúng ảnh
+    updateCarousel();
+
+    // ✅ Tự động chuyển mỗi 3 giây
+    setInterval(nextSlide, 3000);
+  </script>
+
+  <script>
+    document
+      .getElementById("commentForm")
+      .addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("userName").value.trim();
+        const comment = document.getElementById("userComment").value.trim();
+
+        if (name && comment) {
+          const feedbackList = document.querySelector(".feedback-list");
+          const newCard = document.createElement("div");
+          newCard.classList.add("feedback-card");
+
+          newCard.innerHTML = `
+  <img src="../Img/user.jpg" alt="${name}" />
+  <div>
+    <strong>${name}</strong><br />
+    ${comment}
+  </div>
+`;
+
+          feedbackList.appendChild(newCard);
+          document.getElementById("userName").value = "";
+          document.getElementById("userComment").value = "";
+        }
+      });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const scrollBtn = document.getElementById("scrollToTop");
+      if (scrollBtn) {
+        scrollBtn.addEventListener("click", function () {
+          const scrollStep = -window.scrollY / 50;
+          const scrollInterval = setInterval(function () {
+            if (window.scrollY !== 0) {
+              window.scrollBy(0, scrollStep);
+            } else {
+              clearInterval(scrollInterval);
+            }
+          }, 10);
+        });
+      }
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const balance = localStorage.getItem("userBalance");
+      const balanceEl = document.getElementById("dropdownBalance");
+      if (balanceEl && balance !== null) {
+        balanceEl.textContent = Number(balance).toLocaleString() + " đ";
+      }
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const loginBtn = document.getElementById("loginBtn");
+      const registerBtn = document.getElementById("registerBtn");
+      const userDropdown = document.getElementById("userDropdown");
+      const userNameLabel = document.getElementById("userNameLabel");
+      const userEmailDisplay = document.getElementById("userEmail");
+      const logoutBtnDropdown = document.getElementById("logoutBtnDropdown");
+
+      const isLoggedIn = localStorage.getItem("loggedIn");
+      const currentUser = localStorage.getItem("currentUser");
+      const currentEmail = localStorage.getItem("currentEmail");
+
+      if (isLoggedIn === "true" && currentUser) {
+        if (loginBtn) loginBtn.style.display = "none";
+        if (registerBtn) registerBtn.style.display = "none";
+        if (userDropdown) userDropdown.style.display = "block";
+
+        userNameLabel.textContent = currentUser;
+        userEmailDisplay.textContent =
+          currentEmail || "dochibinh1981@gmail.com";
+
+        if (logoutBtnDropdown) {
+          logoutBtnDropdown.addEventListener("click", function () {
+            localStorage.removeItem("loggedIn");
+            localStorage.removeItem("currentUser");
+            localStorage.removeItem("currentEmail");
+            location.reload();
+          });
+        }
+      }
+    });
+  </script>
+  <script>
+    window.addEventListener("load", function () {
+      const savedAvatar = localStorage.getItem("userAvatar");
+      const avatarImg = document.getElementById("userAvatar");
+
+      if (savedAvatar && avatarImg) {
+        avatarImg.src = savedAvatar;
+      }
+    });
+  </script>
+  <script>
+    function buyGame() {
+      const gameId = "beam_ng_drive"; // ID duy nhất cho game này
+      const price = 500000;
+
+      const balance = Number(localStorage.getItem("userBalance") || 0);
+      const currentUser = localStorage.getItem("currentUser");
+      const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+
+      if (!isLoggedIn || !currentUser) {
+        alert("❗ Vui lòng đăng nhập để mua game.");
+        return;
+      }
+
+      // Kiểm tra nếu đã mua rồi
+      const purchasedGames = JSON.parse(
+        localStorage.getItem("purchasedGames") || "{}"
+      );
+      if (
+        purchasedGames[currentUser] &&
+        purchasedGames[currentUser].includes(gameId)
+      ) {
+        alert("✅ Bạn đã mua game này rồi.");
+        return;
+      }
+
+      // Kiểm tra số dư
+      if (balance < price) {
+        alert("💸 Không đủ tiền để mua game này.");
+        return;
+      }
+
+      // Trừ tiền & lưu game đã mua
+      const newBalance = balance - price;
+      localStorage.setItem("userBalance", newBalance);
+      document.getElementById("dropdownBalance").textContent =
+        newBalance.toLocaleString() + " đ";
+
+      // Cập nhật danh sách game đã mua
+      if (!purchasedGames[currentUser]) {
+        purchasedGames[currentUser] = [];
+      }
+      purchasedGames[currentUser].push(gameId);
+      localStorage.setItem("purchasedGames", JSON.stringify(purchasedGames));
+
+      alert("🎉 Mua thành công! Bạn đã sở hữu BeamNG drive.");
+    }
+  </script>
+
+  <button id="scrollToTop" title="Lên đầu trang">⬆</button>
+</body>
+<footer class="fancy-footer">
+  <div class="footer-container">
+    <div class="footer-section brand">
+      <img src="../Img/Game_logo.webp" alt="Logo" />
+      <h2>Game Downloader</h2>
+      <p>Tải game tốc độ cao – Cập nhật game hot mỗi ngày!</p>
+    </div>
+
+    <div class="footer-section links">
+      <h3>Danh mục</h3>
+      <ul>
+        <li><a href="./index.html">Trang chủ</a></li>
+          <li><a href="./new_game.html">Game mới</a></li>
+          <li><a href="./tintuc_1.html">Tin tức</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section support">
+      <h3>Hỗ trợ</h3>
+      <ul>
+        <li><a href="#">Chính sách bảo mật</a></li>
+        <li><a href="#">Điều khoản sử dụng</a></li>
+        <li><a href="#">Liên hệ</a></li>
+        <li><a href="#">FAQs</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section social">
+      <h3>Kết nối</h3>
+      <div class="social-icons">
+        <a href="#"><img src="../Img/Facebook.webp" alt="Facebook" /></a>
+        <a href="#"><img src="../Img/YouTube.png" alt="YouTube" /></a>
+        <a href="#"><img src="../Img/tiktok.jpg" alt="TikTok" /></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Game Downloader. All rights reserved.</p>
+  </div>
+</footer>
+
+</html>

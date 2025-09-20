@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pokemon-shield</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../Css/Game.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg custom-navbar">
+      <div class="container-fluid">
+        <!-- Logo -->
+        <a
+          class="navbar-brand d-flex align-items-center"
+          href="../HTML/index.html"
+        >
+          <img src="../Img/Game_logo.webp" alt="Logo" />
+          <span>Game downloader</span>
+        </a>
+
+        <!-- Nút hamburger -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu -->
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="mainNavbar"
+        >
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="btn btn-search-nav ms-2" href="./search.html"
+                >🔍 Tìm kiếm game</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./new_game.html">Game mới</a>
+            </li>
+            <li class="nav-item dropdown custom-dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="genreDropdown"
+                role="button"
+              >
+                Thể loại
+              </a>
+              <ul
+                class="dropdown-menu genre-menu"
+                aria-labelledby="genreDropdown"
+              >
+                <li>
+                  <a class="dropdown-item" href="./Game_hanh_dong.html"
+                    >Hành động</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./Game_phieu_luu.html"
+                    >Phiêu lưu</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./Game_nhap_vai.html"
+                    >Nhập vai</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./Game_kinh_di.html"
+                    >Kinh dị</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./Game_the_thao.html"
+                    >Thể thao</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./Game_mo_phong.html"
+                    >Mô phỏng</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Khi chưa đăng nhập -->
+            <li class="nav-item">
+              <a class="nav-link" href="./login.html" id="loginBtn"
+                >Đăng nhập</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./register.html" id="registerBtn"
+                >Đăng ký</a
+              >
+            </li>
+
+            <!-- Khi đã đăng nhập -->
+            <li
+              class="nav-item dropdown user-dropdown"
+              id="userDropdown"
+              style="display: none"
+            >
+              <a
+                class="nav-link dropdown-toggle d-flex align-items-center"
+                href="#"
+                id="userDropdownBtn"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  id="userAvatar"
+                  src="../Img/user.jpg"
+                  alt="User"
+                  class="user-avatar"
+                />
+                <span id="userNameLabel" style="margin-left: 8px"></span>
+              </a>
+              <ul
+                class="dropdown-menu user-menu dropdown-menu-end"
+                aria-labelledby="userDropdownBtn"
+              >
+                <li>
+                  <span class="dropdown-item-text" id="userEmail"
+                    >dochibinh1981@gmail.com</span
+                  >
+                </li>
+                <li>
+                  <span class="dropdown-item-text">
+                    Số dư:
+                    <span id="dropdownBalance" style="color: red">0 đ</span>
+                  </span>
+                </li>
+
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./profile.html">Tài khoản</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./deposit_money.html"
+                    >Nạp tiền</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./leaderboard.html"
+                    >Top nạp tiền</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./purchased.html"
+                    >Game đã mua</a
+                  >
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#" id="logoutBtnDropdown"
+                    >Đăng xuất</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="main-section">
+      <div class="game-hero">
+        <img src="../Img/PKM_shield_2.jpg" alt="pkm sword Banner" />
+        <div class="hero-info">
+          <h1>Pokemon Shield</h1>
+          <p>
+            Pokémon Sword và Pokémon Shield là cặp trò chơi đầu tiên của Thế hệ
+            VIII. Chúng diễn ra ở vùng Galar lấy cảm hứng từ Vương quốc Anh.
+            Pokémon khởi đầu của vùng này là: Grookey, Scorbunny và Sobble.
+          </p>
+          <div class="game-details">
+            <div class="info-item">
+              • Nhà phát hành: <strong>Nintendo</strong>
+            </div>
+            <div class="info-item">
+              • Ngày phát hành: <strong>15-11-2019</strong>
+            </div>
+            <div class="info-item">
+              • Thể loại:
+              <strong> Phiêu lưu, Anime, Nhập vai</strong>
+            </div>
+            <div class="info-item">• Dung lượng: <strong>12.7 GB</strong></div>
+            <div class="info-item">• Cấu hình: <strong>Mạnh</strong></div>
+            <div class="info-item">• Cập nhật: <strong>10-04-2025</strong></div>
+            <div class="info-item">
+              • Ngôn ngữ:
+              <strong> Tiếng Anh, Tiếng Nhật</strong>
+            </div>
+            <div class="info-item">• Series: <strong>Pokemon</strong></div>
+            <div class="info-item">
+              • Phát triển:<strong> Game bom tấn (AAA)</strong>
+            </div>
+            <div class="info-item">
+              • Người đăng:<strong> Game downloader</strong>
+            </div>
+          </div>
+          <a href="#tai-game" class="btn-download">Tải Ngay</a>
+        </div>
+      </div>
+    </section>
+    <div class="row-layout">
+      <div class="left-column">
+        <section class="content-section" id="gioi-thieu">
+          <h2>Giới thiệu</h2>
+          <p>
+            Một thế hệ Pokémon mới sắp ra mắt trên hệ máy Nintendo Switch™. Bắt
+            đầu cuộc phiêu lưu của bạn với tư cách là Huấn luyện viên Pokémon
+            bằng cách chọn một trong ba Pokémon đồng hành mới: Grookey,
+            Scorbunny hoặc Sobble. Sau đó, bắt đầu hành trình ở vùng Galar mới,
+            nơi bạn sẽ thách đấu với những kẻ gây rối của Team Yell, đồng thời
+            khám phá bí ẩn đằng sau Pokémon huyền thoại Zacian và Zamazenta!
+            Khám phá Wild Area, một vùng đất rộng lớn nơi người chơi có thể tự
+            do điều khiển camera. Hợp tác với ba người chơi khác tại địa phương
+            hoặc trực tuyến trong chế độ hợp tác nhiều người chơi Max Raid
+            Battles* mới, trong đó người chơi sẽ đối đầu với những Pokémon khổng
+            lồ và siêu mạnh được gọi là Dynamax Pokémon.
+          </p>
+          <p>
+            Một số Pokémon thậm chí có thể Gigantamax để có diện mạo mới và một
+            bộ chiêu thức G-Max mạnh mẽ. Nhưng để trở thành nhà vô địch, bạn
+            không chỉ cần trau dồi kỹ năng chiến đấu: bạn có thể tự chọn quần áo
+            và thay đổi kiểu tóc khi ghé thăm các cửa hàng trong thị trấn, để
+            bạn có thể trở thành huấn luyện viên mà bạn mong muốn. Trong suốt
+            hành trình của mình, bạn sẽ gặp những Pokémon mới được phát hiện
+            cũng như những Pokémon quen thuộc trông hơi khác một chút trong hình
+            dạng Galarian mới của chúng! Để có cách khác để tăng cấp cho Pokémon
+            của bạn, hãy giao cho chúng Poké Jobs để hoàn thành và để vui hơn,
+            bạn thậm chí có thể chơi với Pokémon của mình trong Pokémon Camp!
+          </p>
+          <p>
+            Hai cơ chế mới, Dynamax và Gigantamax, xuất hiện. Dynamaxing cho
+            phép Pokémon phát triển đến kích thước lớn và chiến đấu với các
+            Pokémon khổng lồ khác; các đòn tấn công của chúng cũng được
+            Dynamaxed và có các thuộc tính mới. Gigantamaxing cũng tương tự,
+            nhưng Pokémon phát triển lớn hơn và cũng thay đổi ngoại hình.
+          </p>
+
+          <p>
+            Pokémon lang thang trên thế giới trở lại từ Let's Go, Pikachu! và
+            Let's Go, Eevee!. Pokémon cũng có thể được tìm thấy trong các cuộc
+            chạm trán ngẫu nhiên trong cỏ. Pokémon trên thế giới cũng hoạt động
+            khác với trò chơi trước. Một số Pokémon đi lang thang bên ngoài cỏ;
+            một số Pokémon sẽ đuổi theo người chơi, và một số Pokémon sẽ chạy
+            hoặc bay xa khỏi người chơi.
+          </p>
+        </section>
+        <section>
+          <div class="carousel-container">
+            <button class="nav prev" onclick="prevSlide()">‹</button>
+
+            <div class="carousel-track">
+              <img src="../Img/pkm_shield_crs_1.jpeg" class="carousel-img" />
+              <img
+                src="../Img/pkm_shield_crs_2.jpeg"
+                class="carousel-img active"
+              />
+              <img src="../Img/pkm_shield_crs_3.jpeg" class="carousel-img" />
+              <img src="../Img/pkm_shield_crs_4.jpeg" class="carousel-img" />
+            </div>
+
+            <button class="nav next" onclick="nextSlide()">›</button>
+
+            <div class="carousel-dots">
+              <span class="dot active" onclick="goToSlide(0)"></span>
+              <span class="dot" onclick="goToSlide(1)"></span>
+              <span class="dot" onclick="goToSlide(2)"></span>
+              <span class="dot" onclick="goToSlide(3)"></span>
+            </div>
+          </div>
+        </section>
+        <section class="content-section" id="cau-hinh">
+          <h2>Cấu hình yêu cầu</h2>
+          <h3>Cấu hình tối thiểu:</h3>
+          <ul>
+            <li>Hệ điều hành: Windows 10 64-bit</li>
+            <li>CPU: Intel Core i5-2500K / AMD Ryzen 3 1200</li>
+            <li>RAM: 8 GB</li>
+            <li>Card đồ họa: NVIDIA GeForce GTX 960 / AMD Radeon R9 380</li>
+            <li>Dung lượng ổ cứng: 100 GB trống</li>
+          </ul>
+          <h3>Cấu hình đề nghị:</h3>
+          <ul>
+            <li>Hệ điều hành: Windows 10/11 64-bit</li>
+            <li>CPU: Intel Core i7-6700K / AMD Ryzen 5 1600X</li>
+            <li>RAM: 16 GB</li>
+            <li>
+              Card đồ họa: NVIDIA GeForce GTX 1070 / AMD Radeon RX Vega 56
+            </li>
+            <li>Dung lượng ổ cứng: SSD với ít nhất 100 GB trống</li>
+          </ul>
+        </section>
+        <section class="content-section" id="tai-game">
+          <h2>Tải Game</h2>
+          <div class="download-card">
+            <img src="../Img/PKM_shield_1.jpg" alt="Game Art" />
+            <div class="download-info">
+              <p>Nền tảng: PC / PS5 / Xbox</p>
+              <button class="btn btn-primary" onclick="buyGame()">
+                🛒 Mua game (300,000 đ)
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section2" id="tin-tuc">
+          <h2>Tin tức mới</h2>
+          <div class="news-card">
+            <h3>Trailer mới ra mắt</h3>
+            <p>
+              Trailer mới nhất của Pokémon Sword đã được phát hành, mang đến cái
+              nhìn sâu sắc về các tính năng mới và cải tiến trong trò chơi. Đoạn
+              trailer hé lộ nhiều cảnh chiến đấu hấp dẫn.
+            </p>
+            <iframe
+              width="100%"
+              height="400"
+              src="https://www.youtube.com/embed/4wG500yfgUw"
+              title="Trailer Pokemon Sword"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+        </section>
+      </div>
+      <div class="right-column">
+        <h3 class="left">Game hot</h3>
+        <h3 class="right"><a href="../HTML/new_game.html">Xem thêm</a></h3>
+        <div class="related-game">
+          <a href="../HTML/Game3.html"
+            ><img src="../Img/Elden_ring_nightreign.webp" alt="Elden ring"
+          /></a>
+          <a href="../HTML/Game3.html">Elden ring nightreign</a>
+        </div>
+        <div class="related-game">
+          <a href="../HTML/Game6.html"
+            ><img src="../Img/Palworld.webp" alt="Đua xe"
+          /></a>
+          <a href="../HTML/Game6.html">Palworld</a>
+        </div>
+        <div class="related-game">
+          <a href="../HTML/Game5.html"
+            ><img src="../Img/PKM_shield_1.jpg" alt="Pokemon Shield"
+          /></a>
+          <a href="../HTML/Game5.html">Pokemon Shield</a>
+        </div>
+        <div class="related-game">
+          <a href="../HTML/Game4.html"
+            ><img src="../Img/PKM_sword_1.jpg" alt="Pokemon Sword"
+          /></a>
+          <a href="../HTML/Game4.html">Pokemon Sword</a>
+        </div>
+        <div class="related-game">
+          <a href="../HTML/Game1.html"
+            ><img src="../Img/Game_nhapvai.jpg" alt="Black Myth: Wukong"
+          /></a>
+          <a href="../HTML/Game1.html">Black Myth: Wukong</a>
+        </div>
+        <div class="related-game">
+          <a href="../HTML/Game2.html"
+            ><img src="../Img/beamng_drive_2.jpeg" alt="BeamNG Drive"
+          /></a>
+          <a href="../HTML/Game2.html">BeamNG Drive</a>
+        </div>
+        <div class="related-game">
+          <a href="../HTML/Game18.html"
+            ><img src="../Img/FC_25.jpg" alt="FC 25"
+          /></a>
+          <a href="../HTML/Game18.html">FC 25</a>
+        </div>
+        <div class="related-game">
+          <a href="../HTML/Game20.html"
+            ><img src="../Img/flight_sim.jpg" alt="Microsoft Flight Simulator"
+          /></a>
+          <a href="../HTML/Game20.html">Microsoft flight simulator</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="feedback" id="danh-gia">
+      <h2>Đánh giá người chơi</h2>
+      <div class="feedback-list">
+        <div class="feedback-card">
+          <img src="../Img/user.jpg" alt="Người dùng" />
+          <div>
+            <strong>Hùng Trần</strong><br />
+            Đồ họa đỉnh thật sự, cảm giác như đang xem phim điện ảnh. Cơ chế
+            chiến đấu khó nhưng đã!
+          </div>
+        </div>
+      </div>
+
+      <!-- Form bình luận -->
+      <div class="comment-box">
+        <h2>Để lại bình luận</h2>
+        <form id="commentForm">
+          <input type="text" id="userName" placeholder="Tên của bạn" />
+          <textarea
+            id="userComment"
+            placeholder="Cảm nghĩ về game..."
+          ></textarea>
+          <button type="submit">Gửi</button>
+        </form>
+      </div>
+    </section>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loginBtn = document.getElementById("loginBtn");
+        const registerBtn = document.getElementById("registerBtn");
+        const logoutBtn = document.getElementById("logoutBtn");
+        const welcomeUser = document.getElementById("welcomeUser");
+
+        const isLoggedIn = localStorage.getItem("loggedIn");
+        const currentUser = localStorage.getItem("currentUser");
+      });
+    </script>
+    <script>
+      let current = 1;
+      const images = document.querySelectorAll(".carousel-img");
+      const dots = document.querySelectorAll(".dot");
+
+      function updateCarousel() {
+        images.forEach((img, i) => {
+          img.classList.toggle("active", i === current);
+        });
+        dots.forEach((dot, i) => {
+          dot.classList.toggle("active", i === current);
+        });
+      }
+
+      function nextSlide() {
+        current = (current + 1) % images.length;
+        updateCarousel();
+      }
+
+      function prevSlide() {
+        current = (current - 1 + images.length) % images.length;
+        updateCarousel();
+      }
+
+      function goToSlide(index) {
+        current = index;
+        updateCarousel();
+      }
+
+      // Gọi lần đầu để hiển thị đúng ảnh
+      updateCarousel();
+
+      // ✅ Tự động chuyển mỗi 3 giây
+      setInterval(nextSlide, 3000);
+    </script>
+
+    <script>
+      document
+        .getElementById("commentForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("userName").value.trim();
+          const comment = document.getElementById("userComment").value.trim();
+
+          if (name && comment) {
+            const feedbackList = document.querySelector(".feedback-list");
+            const newCard = document.createElement("div");
+            newCard.classList.add("feedback-card");
+
+            newCard.innerHTML = `
+  <img src="../Img/user.jpg" alt="${name}" />
+  <div>
+    <strong>${name}</strong><br />
+    ${comment}
+  </div>
+`;
+
+            feedbackList.appendChild(newCard);
+            document.getElementById("userName").value = "";
+            document.getElementById("userComment").value = "";
+          }
+        });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const scrollBtn = document.getElementById("scrollToTop");
+        if (scrollBtn) {
+          scrollBtn.addEventListener("click", function () {
+            const scrollStep = -window.scrollY / 50;
+            const scrollInterval = setInterval(function () {
+              if (window.scrollY !== 0) {
+                window.scrollBy(0, scrollStep);
+              } else {
+                clearInterval(scrollInterval);
+              }
+            }, 10);
+          });
+        }
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const balance = localStorage.getItem("userBalance");
+        const balanceEl = document.getElementById("dropdownBalance");
+        if (balanceEl && balance !== null) {
+          balanceEl.textContent = Number(balance).toLocaleString() + " đ";
+        }
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loginBtn = document.getElementById("loginBtn");
+        const registerBtn = document.getElementById("registerBtn");
+        const userDropdown = document.getElementById("userDropdown");
+        const userNameLabel = document.getElementById("userNameLabel");
+        const userEmailDisplay = document.getElementById("userEmail");
+        const logoutBtnDropdown = document.getElementById("logoutBtnDropdown");
+
+        const isLoggedIn = localStorage.getItem("loggedIn");
+        const currentUser = localStorage.getItem("currentUser");
+        const currentEmail = localStorage.getItem("currentEmail");
+
+        if (isLoggedIn === "true" && currentUser) {
+          if (loginBtn) loginBtn.style.display = "none";
+          if (registerBtn) registerBtn.style.display = "none";
+          if (userDropdown) userDropdown.style.display = "block";
+
+          userNameLabel.textContent = currentUser;
+          userEmailDisplay.textContent =
+            currentEmail || "dochibinh1981@gmail.com";
+
+          if (logoutBtnDropdown) {
+            logoutBtnDropdown.addEventListener("click", function () {
+              localStorage.removeItem("loggedIn");
+              localStorage.removeItem("currentUser");
+              localStorage.removeItem("currentEmail");
+              location.reload();
+            });
+          }
+        }
+      });
+    </script>
+    <script>
+      window.addEventListener("load", function () {
+        const savedAvatar = localStorage.getItem("userAvatar");
+        const avatarImg = document.getElementById("userAvatar");
+
+        if (savedAvatar && avatarImg) {
+          avatarImg.src = savedAvatar;
+        }
+      });
+    </script>
+    <script>
+      function buyGame() {
+        const gameId = "pkm_shield"; // ID duy nhất cho game này
+        const price = 300000;
+
+        const balance = Number(localStorage.getItem("userBalance") || 0);
+        const currentUser = localStorage.getItem("currentUser");
+        const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+
+        if (!isLoggedIn || !currentUser) {
+          alert("❗ Vui lòng đăng nhập để mua game.");
+          return;
+        }
+
+        // Kiểm tra nếu đã mua rồi
+        const purchasedGames = JSON.parse(
+          localStorage.getItem("purchasedGames") || "{}"
+        );
+        if (
+          purchasedGames[currentUser] &&
+          purchasedGames[currentUser].includes(gameId)
+        ) {
+          alert("✅ Bạn đã mua game này rồi.");
+          return;
+        }
+
+        // Kiểm tra số dư
+        if (balance < price) {
+          alert("💸 Không đủ tiền để mua game này.");
+          return;
+        }
+
+        // Trừ tiền & lưu game đã mua
+        const newBalance = balance - price;
+        localStorage.setItem("userBalance", newBalance);
+        document.getElementById("dropdownBalance").textContent =
+          newBalance.toLocaleString() + " đ";
+
+        // Cập nhật danh sách game đã mua
+        if (!purchasedGames[currentUser]) {
+          purchasedGames[currentUser] = [];
+        }
+        purchasedGames[currentUser].push(gameId);
+        localStorage.setItem("purchasedGames", JSON.stringify(purchasedGames));
+
+        alert("🎉 Mua thành công! Bạn đã sở hữu Pokemon shield.");
+      }
+    </script>
+
+    <button id="scrollToTop" title="Lên đầu trang">⬆</button>
+  </body>
+  <footer class="fancy-footer">
+    <div class="footer-container">
+      <div class="footer-section brand">
+        <img src="../Img/Game_logo.webp" alt="Logo" />
+        <h2>Game Downloader</h2>
+        <p>Tải game tốc độ cao – Cập nhật game hot mỗi ngày!</p>
+      </div>
+
+      <div class="footer-section links">
+        <h3>Danh mục</h3>
+        <ul>
+          <li><a href="./index.html">Trang chủ</a></li>
+          <li><a href="./new_game.html">Game mới</a></li>
+          <li><a href="./tintuc_1.html">Tin tức</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section support">
+        <h3>Hỗ trợ</h3>
+        <ul>
+          <li><a href="#">Chính sách bảo mật</a></li>
+          <li><a href="#">Điều khoản sử dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section social">
+        <h3>Kết nối</h3>
+        <div class="social-icons">
+          <a href="#"><img src="../Img/Facebook.webp" alt="Facebook" /></a>
+          <a href="#"><img src="../Img/YouTube.png" alt="YouTube" /></a>
+          <a href="#"><img src="../Img/tiktok.jpg" alt="TikTok" /></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Game Downloader. All rights reserved.</p>
+    </div>
+  </footer>
+</html>

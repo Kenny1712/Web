@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hồ sơ tài khoản</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../Css/profile.css" />
+</head>
+<body>
+  <div class="profile-container">
+    <div class="profile-header">
+      <div class="avatar-container">
+        <img id="userAvatar" src="../Img/user.jpg" alt="Avatar" class="avatar" />
+        <div class="edit-avatar" onclick="window.location.href='avt-change.html'">✏</div>
+      </div>
+      <h2 id="userName">Tên người dùng</h2>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="mb-3">
+      <label class="info-label">📧 Email</label>
+      <div class="info-value" id="userEmail">dochibinh1981@gmail.com</div>
+    </div>
+
+    <div class="mb-3">
+      <label class="info-label">💰 Số dư</label>
+      <div class="info-value" id="userBalance">0 đ</div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="btn-group-custom">
+      <a href="./deposit_money.html" class="btn btn-custom">Nạp tiền</a>
+      <a href="./index.html" class="btn btn-custom">Trang chủ</a>
+      <button class="btn btn-custom" onclick="handleChangePassword()">Đổi mật khẩu</button>
+      <button class="btn btn-custom" onclick="handleChangeName()">Đổi tên</button>
+    </div>
+
+    <div class="note">Thông tin của bạn được lưu cục bộ trong trình duyệt và không chia sẻ ra ngoài.</div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const name = localStorage.getItem("currentUser") || "Chưa đăng nhập";
+      const email = JSON.parse(localStorage.getItem("userData") || "{}").email || "(không có email)";
+      const balance = Number(localStorage.getItem("userBalance") || 0);
+      const avatar = localStorage.getItem("userAvatar");
+
+      document.getElementById("userName").textContent = name;
+      document.getElementById("userEmail").textContent = email;
+      document.getElementById("userBalance").textContent = balance.toLocaleString() + " đ";
+
+      if (avatar) {
+        document.getElementById("userAvatar").src = avatar;
+      }
+    });
+
+    function handleChangePassword() {
+      const newPass = prompt("🔐 Nhập mật khẩu mới:");
+      if (newPass && newPass.trim().length >= 4) {
+        let userData = JSON.parse(localStorage.getItem("userData") || "{}");
+        userData.password = newPass.trim();
+        localStorage.setItem("userData", JSON.stringify(userData));
+        alert("✅ Mật khẩu đã được thay đổi thành công!");
+      } else {
+        alert("❌ Mật khẩu phải có ít nhất 4 ký tự.");
+      }
+    }
+    function handleChangeName() {
+  const newName = prompt("Nhập tên mới:");
+  if (newName && newName.trim().length > 0) {
+    let userData = JSON.parse(localStorage.getItem("userData") || "{}");
+    userData.username = newName.trim();
+    localStorage.setItem("userData", JSON.stringify(userData));
+    localStorage.setItem("currentUser", newName.trim()); // cập nhật luôn currentUser
+    alert("✅ Tên đã được thay đổi thành công!");
+    location.reload();
+  } else {
+    alert("❌ Tên không được để trống.");
+  }
+}
+
+  </script>
+</body>
+</html>

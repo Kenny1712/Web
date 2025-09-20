@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thay đổi ảnh đại diện</title>
+  <link rel="stylesheet" href="../Css/avt_change.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <h2>Thay đổi ảnh đại diện</h2>
+    <input type="file" id="avatarInput" accept="image/*" />
+    <label for="avatarInput" class="btn btn-upload">📁 Chọn ảnh mới</label>
+
+    <div class="preview-wrapper">
+      <img id="cropImage" alt="Ảnh xem trước" />
+    </div>
+
+    <div>
+      <button id="cropAndSaveBtn" class="btn btn-save" style="display: none;">✅ Cắt & Lưu</button>
+      <button id="resetBtn" class="btn btn-reset">🗑 Xóa ảnh</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+  <script>
+    let cropper;
+    const input = document.getElementById("avatarInput");
+    const image = document.getElementById("cropImage");
+    const cropBtn = document.getElementById("cropAndSaveBtn");
+    const resetBtn = document.getElementById("resetBtn");
+
+    // Load avatar cũ nếu có
+    window.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem("userAvatar");
+      if (saved) {
+        image.src = saved;
+        image.style.display = "block";
+        cropper = new Cropper(image, {
+          aspectRatio: 1,
+          viewMode: 1,
+          dragMode: 'move',
+          background: false,
+          autoCropArea: 1,
+        });
+        cropBtn.style.display = "inline-block";
+      }
+    });
+
+    input.addEventListener("change", function (e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (event) {
+          image.src = event.target.result;
+          image.style.display = "block";
+          if (cropper) cropper.destroy();
+          cropper = new Cropper(image, {
+            aspectRatio: 1,
+            viewMode: 1,
+            dragMode: 'move',
+            background: false,
+            autoCropArea: 1,
+          });
+          cropBtn.style.display = "inline-block";
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    cropBtn.addEventListener("click", () => {
+      const canvas = cropper.getCroppedCanvas({ width: 300, height: 300 });
+      const croppedImage = canvas.toDataURL("image/png");
+      localStorage.setItem("userAvatar", croppedImage);
+      alert("✅ Đã lưu ảnh đại diện!");
+      window.location.href = "../HTML/profile.html";
+    });
+
+    resetBtn.addEventListener("click", () => {
+      localStorage.removeItem("userAvatar");
+      alert("🗑 Đã xóa ảnh đại diện.");
+      window.location.reload();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Faker "cà khịa" T1 sau trận thắng</title>
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  <link rel="stylesheet" href="../Css/news.css" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg custom-navbar">
+      <div class="container-fluid">
+        <!-- Logo -->
+        <a
+          class="navbar-brand d-flex align-items-center"
+          href="../HTML/index.html"
+        >
+          <img src="../Img/Game_logo.webp" alt="Logo" />
+          <span>Game downloader</span>
+        </a>
+
+        <!-- Nút hamburger -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu -->
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="mainNavbar"
+        >
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="btn btn-search-nav ms-2" href="./search.html"
+                >🔍 Tìm kiếm game</a
+              >
+            </li>
+            <li class="nav-item"><a class="nav-link" href="./new_game.html">Game mới</a></li>
+            <li class="nav-item dropdown custom-dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="genreDropdown"
+                role="button"
+              >
+                Thể loại
+              </a>
+              <ul
+                class="dropdown-menu genre-menu"
+                aria-labelledby="genreDropdown"
+              >
+                <li><a class="dropdown-item" href="./Game_hanh_dong.html">Hành động</a></li>
+                <li><a class="dropdown-item" href="./Game_phieu_luu.html">Phiêu lưu</a></li>
+                <li><a class="dropdown-item" href="./Game_nhap_vai.html">Nhập vai</a></li>
+                <li><a class="dropdown-item" href="./Game_kinh_di.html">Kinh dị</a></li>
+                <li><a class="dropdown-item" href="./Game_the_thao.html">Thể thao</a></li>
+                <li><a class="dropdown-item" href="./Game_mo_phong.html">Mô phỏng</a></li>
+              </ul>
+            </li>
+
+            <!-- Khi chưa đăng nhập -->
+            <li class="nav-item">
+              <a class="nav-link" href="./login.html" id="loginBtn"
+                >Đăng nhập</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./register.html" id="registerBtn"
+                >Đăng ký</a
+              >
+            </li>
+
+            <!-- Khi đã đăng nhập -->
+            <li
+              class="nav-item dropdown user-dropdown"
+              id="userDropdown"
+              style="display: none"
+            >
+              <a
+                class="nav-link dropdown-toggle d-flex align-items-center"
+                href="#"
+                id="userDropdownBtn"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img id="userAvatar" src="../Img/user.jpg" alt="User" class="user-avatar" />
+                <span id="userNameLabel" style="margin-left: 8px"></span>
+              </a>
+              <ul
+                class="dropdown-menu user-menu dropdown-menu-end"
+                aria-labelledby="userDropdownBtn"
+              >
+                <li>
+                  <span class="dropdown-item-text" id="userEmail"
+                    >dochibinh1981@gmail.com</span
+                  >
+                </li>
+                <li>
+  <span class="dropdown-item-text">
+    Số dư: <span id="dropdownBalance" style="color: red">0 đ</span>
+  </span>
+</li>
+
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="./profile.html">Tài khoản</a></li>
+                <li><a class="dropdown-item" href="./deposit_money.html">Nạp tiền</a></li>
+                <li><a class="dropdown-item" href="./leaderboard.html">Top nạp tiền</a></li>
+                <li><a class="dropdown-item" href="./purchased.html">Game đã mua</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#" id="logoutBtnDropdown"
+                    >Đăng xuất</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  <div class="news-container">
+    <h1>Faker "cà khịa" T1 sau trận thắng: Fan cười xỉu vì độ lầy</h1>
+    <img src="../Img/faker.webp" alt="Faker cười" class="news-img" />
+    
+    <p><strong>Trong trận đấu tối qua giữa T1 và đối thủ truyền kiếp, Faker đã một lần nữa khiến người hâm mộ dậy sóng không chỉ vì kỹ năng thượng thừa mà còn bởi hành động "cà khịa" đầy duyên dáng ngay sau chiến thắng.</strong></p>
+
+    <h2>🔥 Màn trình diễn đỉnh cao</h2>
+    <p>T1 đã có một trận đấu áp đảo khi chiến thắng 2-0 chỉ trong chưa đầy 45 phút. Faker – đội trưởng kiêm mid-laner kỳ cựu – đã chơi một trận xuất sắc với KDA gần như hoàn hảo. Anh sử dụng LeBlanc để thể hiện kỹ năng đi đường và xử lý giao tranh cực kỳ tinh tế.</p>
+    
+    <h2>😏 "Cà khịa" nhưng đáng yêu</h2>
+    <p>Sau khi trận đấu kết thúc, Faker quay sang camera, cười nhẹ và giơ tay làm động tác "tạm biệt", kèm dòng thoại "Chắc họ chưa tỉnh ngủ ấy nhỉ?" khiến cả team và khán giả bật cười. Khoảnh khắc đó nhanh chóng được cắt thành clip lan truyền chóng mặt trên TikTok và YouTube Shorts.</p>
+
+    <h2>❤️ Phản ứng từ cộng đồng</h2>
+    <p>Trên các diễn đàn như Reddit và fanpage chính thức của T1, người hâm mộ đã để lại hàng nghìn bình luận tích cực:</p>
+    <ul>
+      <li>"Faker giờ lầy ghê, nhưng vẫn đỉnh không thể bàn cãi!"</li>
+      <li>"Ông vua không ngai của làng LMHT, vừa gánh team vừa gánh content luôn!"</li>
+      <li>"Ai bảo game thủ không có khiếu hài hước chứ!"</li>
+    </ul>
+
+    <h2>🧠 Tinh thần thủ lĩnh</h2>
+    <p>Theo huấn luyện viên T1, đây là một phần trong chiến lược mới nhằm xây dựng hình ảnh thân thiện, gần gũi hơn với cộng đồng. Faker không chỉ là trụ cột kỹ thuật mà còn là biểu tượng văn hóa của T1 – một biểu tượng đang tiến hóa theo thời đại.</p>
+
+    <h2>📰 Nguồn tin & Trích dẫn</h2>
+    <p>Thông tin được tổng hợp từ buổi phỏng vấn sau trận đấu trên kênh <strong>LOL Esports</strong>, cùng với các bài đăng trên <strong>Reddit</strong> và <strong>Twitter/X</strong>.</p>
+
+    <p style="font-style: italic;">Bài viết: Game Downloader News | Ngày đăng: 11/07/2025</p>
+  </div>
+    <!-- 🔻 Tin tức game khác -->
+    <hr />
+    <div class="related-news">
+      <h2>Tin tức game khác</h2>
+      <div class="related-item">
+        <img src="../Img/tintuc2.webp" alt="GTA 6" />
+        <div class="related-content">
+          <h3>GTA 6 quá chân thực như phim bom tấn</h3>
+          <p>Thiết kế nhân vật nữ chính trong GTA 6 khiến cộng đồng mạng phát cuồng vì quá giống thật, như bước ra từ Hollywood...</p>
+          <a href="./tintuc_2.html" class="view-button">Xem tin GTA 6</a>
+        </div>
+      </div>
+    </div>
+    <section class="feedback" id="danh-gia">
+      <h2>Đánh giá người chơi</h2>
+      <div class="feedback-list">
+        <div class="feedback-card">
+          <img src="../Img/user.jpg" alt="Người dùng" />
+          <div>
+            <strong>Hưng Lê</strong><br />
+            Tui coi xong trận hôm qua mà cười xỉu, kiểu này phải xem lại replay mấy lần luôn á 😂
+          </div>
+        </div>
+      </div>
+      <!-- Form bình luận -->
+      <div class="comment-box">
+        <h2>Để lại bình luận</h2>
+        <form id="commentForm">
+          <input type="text" id="userName" placeholder="Tên của bạn" />
+          <textarea
+            id="userComment"
+            placeholder="Cảm nghĩ về game..."
+          ></textarea>
+          <button type="submit">Gửi</button>
+        </form>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loginBtn = document.getElementById("loginBtn");
+        const registerBtn = document.getElementById("registerBtn");
+        const logoutBtn = document.getElementById("logoutBtn");
+        const welcomeUser = document.getElementById("welcomeUser");
+
+        const isLoggedIn = localStorage.getItem("loggedIn");
+        const currentUser = localStorage.getItem("currentUser");
+      });
+    </script>
+    <script>
+      document
+        .getElementById("commentForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("userName").value.trim();
+          const comment = document.getElementById("userComment").value.trim();
+
+          if (name && comment) {
+            const feedbackList = document.querySelector(".feedback-list");
+            const newCard = document.createElement("div");
+            newCard.classList.add("feedback-card");
+
+            newCard.innerHTML = `
+  <img src="../Img/user.jpg" alt="${name}" />
+  <div>
+    <strong>${name}</strong><br />
+    ${comment}
+  </div>
+`;
+
+            feedbackList.appendChild(newCard);
+            document.getElementById("userName").value = "";
+            document.getElementById("userComment").value = "";
+          }
+        });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const scrollBtn = document.getElementById("scrollToTop");
+        if (scrollBtn) {
+          scrollBtn.addEventListener("click", function () {
+            const scrollStep = -window.scrollY / 50;
+            const scrollInterval = setInterval(function () {
+              if (window.scrollY !== 0) {
+                window.scrollBy(0, scrollStep);
+              } else {
+                clearInterval(scrollInterval);
+              }
+            }, 10);
+          });
+        }
+      });
+    </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const balance = localStorage.getItem("userBalance");
+    const balanceEl = document.getElementById("dropdownBalance");
+    if (balanceEl && balance !== null) {
+      balanceEl.textContent = Number(balance).toLocaleString() + " đ";
+    }
+  });
+</script>
+<script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loginBtn = document.getElementById("loginBtn");
+        const registerBtn = document.getElementById("registerBtn");
+        const userDropdown = document.getElementById("userDropdown");
+        const userNameLabel = document.getElementById("userNameLabel");
+        const userEmailDisplay = document.getElementById("userEmail");
+        const logoutBtnDropdown = document.getElementById("logoutBtnDropdown");
+
+        const isLoggedIn = localStorage.getItem("loggedIn");
+        const currentUser = localStorage.getItem("currentUser");
+        const currentEmail = localStorage.getItem("currentEmail");
+
+        if (isLoggedIn === "true" && currentUser) {
+          if (loginBtn) loginBtn.style.display = "none";
+          if (registerBtn) registerBtn.style.display = "none";
+          if (userDropdown) userDropdown.style.display = "block";
+
+          userNameLabel.textContent = currentUser;
+          userEmailDisplay.textContent = currentEmail || "dochibinh1981@gmail.com";
+
+          if (logoutBtnDropdown) {
+            logoutBtnDropdown.addEventListener("click", function () {
+              localStorage.removeItem("loggedIn");
+              localStorage.removeItem("currentUser");
+              localStorage.removeItem("currentEmail");
+              location.reload();
+            });
+          }
+        }
+      });
+    </script>
+    <script>
+  window.addEventListener("load", function () {
+    const savedAvatar = localStorage.getItem("userAvatar");
+    const avatarImg = document.getElementById("userAvatar");
+
+    if (savedAvatar && avatarImg) {
+      avatarImg.src = savedAvatar;
+    }
+  });
+</script>
+<button id="scrollToTop" title="Lên đầu trang">⬆</button>
+</body>
+</html>
